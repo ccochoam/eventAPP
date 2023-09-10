@@ -1,0 +1,28 @@
+<div class="filter-container">
+    <label for="typeFilter">Filtrar por Tipo:</label>
+    <select id="typeFilter" [(ngModel)]="typeFilter">
+        <option value="0">Todos</option>
+        <option value="1">Venta</option>
+        <option value="2">Compra</option>
+    </select>
+
+    <label for="startDate">Fecha Inicio:</label>
+    <input type="date" id="startDate" [(ngModel)]="startDate">
+
+    <label for="endDate">Fecha Fin:</label>
+    <input type="date" id="endDate" [(ngModel)]="endDate">
+
+    <button (click)="filterEvents()">Filtrar</button>
+</div>
+<table>
+    <tr>
+        <th>Fecha</th>
+        <th>Tipo</th>
+        <th>Descripción</th>
+    </tr>
+    <tr *ngFor="let event of events">
+        <td>{{ event.dateEvent | date: 'dd/MM/yyyy'}}</td>
+        <td>{{ getEventType(event.typeEvent) }}</td>
+        <td>{{ event.descriptionEvent }}</td>
+    </tr>
+</table>

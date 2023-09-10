@@ -1,0 +1,6 @@
+.button-row {
+  display: flex; /* Establece un contenedor de flexbox */
+  justify-content: space-between; /* Distribuye los elementos a los extremos */
+  align-items: center; /* Centra verticalmente los elementos */
+}
+
